@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# SQLite local (ajuste conforme necessário)
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Se NÃO quiser versionar dados locais:
+state/*.db
+
+# Se o config.yaml contiver tokens, ignore-o:
+config/config.yaml

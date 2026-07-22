@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">Agentes Ativos</h6>
+
+                    <h2 id="agents" class="text-primary">0</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">Tickets Pendentes</h6>
+
+                    <h2 id="pending" class="text-danger">0</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">Distribuídos Hoje</h6>
+
+                    <h2 id="today" class="text-success">0</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">Total Distribuído</h6>
+
+                    <h2 id="total" class="text-dark">0</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow mb-4">
+
+                <div class="card-header bg-primary text-white">
+
+                    Ranking dos Operadores
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-hover">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Operador</th>
+
+                                <th class="text-end">Tickets</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ranking">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card shadow mb-4">
+
+                <div class="card-header bg-success text-white">
+
+                    Últimas Atribuições
+
+                </div>
+
+                <div class="card-body table-responsive">
+
+                    <table class="table table-sm table-hover">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Ticket</th>
+
+                                <th>Cliente</th>
+
+                                <th>Assunto</th>
+
+                                <th>Grupo</th>
+
+                                <th>Prioridade</th>
+
+                                <th>Estado</th>
+
+                                <th>Agente</th>
+
+                                <th>Data</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="latest">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    Tickets por Agente
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="chartAgents"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    Tickets por Grupo
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="chartGroups"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    Tickets por Prioridade
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="chartPriority"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    Tickets por Hora
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="chartHour"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
+{% endblock %}
